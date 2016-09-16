@@ -54,6 +54,11 @@ NSString * _defaultUserAgent = @"";
     UIWebView * wvInstance = [[[self class] alloc] init];
     
     // Force it to consider the registered user agent
+    // The web view does not automatically examine the registered user defaults for the value
+    // of UserAgent. It only does it on demand, the first time the object needs to obtain a
+    // a value for this setting. An easy way to force the object to query this setting (and thus
+    // transparently keep it in mind for subsequent use) is to evaluate a JavaScript property,
+    // as soon as the object is created. 
     [wvInstance stringByEvaluatingJavaScriptFromString: @"navigator.userAgent"];
     [wvInstance autorelease];
     
