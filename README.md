@@ -19,5 +19,8 @@ The obtained instance is _autoreleased_, so you may need to `retain` it accordin
 
 **Note**
 
+The custom UserAgent string is used transparently in both JavaScript programs, and HTTP headers.
+
+
 The UserAgent string is defined once at creation time of the instance. You cannot change it on an existing instance.
 If you need another UIWebView with a different UserAgent, you must obtain a new instance, using the above static method.
